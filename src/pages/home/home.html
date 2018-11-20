@@ -1,14 +1,38 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+<ion-header >
+  <ion-toolbar>
+    
+    <ion-title style="background-color: #DB5461"> Mi Agenda</ion-title>
+    <ion-buttons end>
+      <button (click)="clickAgregar()" ion-button icon-only color="royal">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content padding style="background-color: #DB5461">
+  <ion-list  style="background-color: #E3F2FD">
+
+    
+      <ion-item *ngFor= "let c of contactos">
+        <ion-avatar item-start>
+          <img [src]=c.avatar>
+        </ion-avatar>
+        <h2 (click)="clickContacto(c)">{{c.nombre}}</h2>
+        <p> {{c.tel}} </p>
+      </ion-item>
+
+      <!-- <ion-item-options side="left">
+        <button ion-button color="primary">
+          <ion-icon name="text"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options> -->
+
+    
+
+
+  </ion-list>
 </ion-content>
